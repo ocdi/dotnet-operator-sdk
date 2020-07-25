@@ -19,6 +19,8 @@ namespace KubeOps.Operator.Entities.Kustomize
 
         public IList<string>? Resources { get; set; }
 
+        public IList<string>? Bases { get; set; }
+
         public IList<string>? PatchesStrategicMerge { get; set; }
 
         public IList<KustomizationImage>? Images { get; set; }

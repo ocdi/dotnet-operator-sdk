@@ -12,6 +12,7 @@ namespace KubeOps.Test.Operator.Entities.TestEntities
     }
 
     [KubernetesEntity(Group = "kubeops.test.dev", ApiVersion = "V1")]
+    [EntityShortName("te")]
     public class TestStatusEntity : CustomKubernetesEntity<TestStatusEntitySpec, TestStatusEntityStatus>
     {
     }

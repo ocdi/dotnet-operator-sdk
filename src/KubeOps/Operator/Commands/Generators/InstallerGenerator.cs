@@ -47,6 +47,9 @@ namespace KubeOps.Operator.Commands.Generators
                 Resources = new List<string>
                 {
                     $"./namespace.{Format.ToString().ToLower()}",
+                },
+                Bases = new List<string> 
+                { 
                     CrdsPath == null || OutputPath == null
                         ? "../crds"
                         : Path.GetRelativePath(OutputPath, CrdsPath).Replace('\\', '/'),
