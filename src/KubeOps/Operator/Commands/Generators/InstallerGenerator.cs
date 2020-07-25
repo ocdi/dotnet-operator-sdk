@@ -62,7 +62,7 @@ namespace KubeOps.Operator.Commands.Generators
                     new KustomizationImage
                     {
                         Name = "operator",
-                        NewName = "public-docker-image-path",
+                        NewName = _settings.ContainerImagePath ?? "public-docker-image-path",
                         NewTag = "latest",
                     },
                 },

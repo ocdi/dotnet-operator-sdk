@@ -33,6 +33,7 @@ namespace KubeOps.Operator.Commands.Generators
                     {
                         Spec = new V1PodSpec
                         {
+                            NodeSelector = new Dictionary<string, string> { { "beta.kubernetes.io/os", "linux" } },
                             TerminationGracePeriodSeconds = 10,
                             Containers = new List<V1Container>
                             {
