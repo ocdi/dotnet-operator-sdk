@@ -76,9 +76,6 @@ namespace KubeOps.Operator
         protected Task<int> Run(string[] args, Action? onHostBuilt)
         {
             ConfigureOperatorServices();
-
-            var app = new CommandLineApplication<RunOperator>();
-
             ConfigureOperatorLogging(args);
 
             OperatorHost = Builder
@@ -93,6 +90,7 @@ namespace KubeOps.Operator
                             }))
                 .Build();
 
+            var app = new CommandLineApplication<RunOperator>();
             app
                 .Conventions
                 .UseDefaultConventions()

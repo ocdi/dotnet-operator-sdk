@@ -1,19 +1,15 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
+using KubeOps.Extensions;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 
 namespace KubeOps.GenericTest
 {
     public class Program
     {
-        public static void Main(string[] args)
+        public static Task<int> Main(string[] args)
         {
-            CreateHostBuilder(args).Build().Run();
+            return CreateHostBuilder(args).Build().RunOperator(args);
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
